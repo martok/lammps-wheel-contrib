@@ -16,8 +16,8 @@ set(CMAKE_INSTALL_LIBDIR .)
 # download LAMMPS to ${LAMMPS_SOURCE_ROOT}
 include(FetchContent)
 FetchContent_Declare(lammps
-  GIT_REPOSITORY    https://github.com/lammps/lammps
-  GIT_TAG           ${LAMMPS_VERSION}
+  GIT_REPOSITORY    https://github.com/martok/lammps
+  GIT_TAG           origin/cmake-test
 )
 FetchContent_GetProperties(lammps)
 if(NOT lammps_POPULATED)

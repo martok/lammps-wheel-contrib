@@ -65,11 +65,6 @@ jobs:
           CIBW_BUILD_VERBOSITY: 1
           CIBW_ARCHS: all
           CIBW_BUILD: cp${{ matrix.python }}-${{ matrix.platform_id }}
-          # use delvewheel on windows
-          CIBW_BEFORE_BUILD_WINDOWS: pip install delvewheel~=1.8
-          CIBW_REPAIR_WHEEL_COMMAND_WINDOWS: >-
-            pwd && dir &&
-            delvewheel repair -v --include build\Release\liblammps.dll --no-mangle liblammps.dll --analyze-existing -w {dest_dir} {wheel}
 
       - uses: actions/upload-artifact@v4
         with:
