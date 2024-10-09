@@ -17,7 +17,7 @@ set(CMAKE_INSTALL_LIBDIR .)
 include(FetchContent)
 FetchContent_Declare(lammps
   GIT_REPOSITORY    https://github.com/martok/lammps
-  GIT_TAG           origin/cmake-test
+  GIT_TAG           origin/cmake-win-shared
 )
 FetchContent_GetProperties(lammps)
 if(NOT lammps_POPULATED)
