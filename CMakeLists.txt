@@ -22,7 +22,7 @@ FetchContent_Declare(lammps
 FetchContent_GetProperties(lammps)
 if(NOT lammps_POPULATED)
   FetchContent_Populate(lammps)
-  include(${lammps_SOURCE_DIR}/cmake/presets/most.cmake)
+  # use default for testing include(${lammps_SOURCE_DIR}/cmake/presets/most.cmake)
   if (WIN32)
     set(PKG_ML-POD OFF)
     set(PKG_ELECTRODE OFF)
