@@ -16,13 +16,13 @@ set(CMAKE_INSTALL_LIBDIR .)
 # download LAMMPS to ${LAMMPS_SOURCE_ROOT}
 include(FetchContent)
 FetchContent_Declare(lammps
-  GIT_REPOSITORY    https://github.com/martok/lammps
-  GIT_TAG           origin/cmake-win-shared
+  GIT_REPOSITORY    https://github.com/lammps/lammps
+  GIT_TAG           ${LAMMPS_VERSION}
 )
 FetchContent_GetProperties(lammps)
 if(NOT lammps_POPULATED)
   FetchContent_Populate(lammps)
-  # use default for testing include(${lammps_SOURCE_DIR}/cmake/presets/most.cmake)
+  include(${lammps_SOURCE_DIR}/cmake/presets/most.cmake)
   if (WIN32)
     set(PKG_ML-POD OFF)
     set(PKG_ELECTRODE OFF)
