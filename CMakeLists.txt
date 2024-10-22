@@ -16,18 +16,22 @@ set(CMAKE_INSTALL_LIBDIR .)
 # download LAMMPS to ${LAMMPS_SOURCE_ROOT}
 include(FetchContent)
 FetchContent_Declare(lammps
-  GIT_REPOSITORY    https://github.com/lammps/lammps
-  GIT_TAG           ${LAMMPS_VERSION}
+  # GIT_REPOSITORY    https://github.com/lammps/lammps
+  # GIT_TAG           ${LAMMPS_VERSION}
+  GIT_REPOSITORY    https://github.com/martok/lammps
+  GIT_TAG           origin/my-work
 )
 FetchContent_GetProperties(lammps)
 if(NOT lammps_POPULATED)
   FetchContent_Populate(lammps)
   include(${lammps_SOURCE_DIR}/cmake/presets/most.cmake)
+  set(BUILD_TOOLS OFF)
   if (WIN32)
     set(PKG_ML-POD OFF)
     set(PKG_ELECTRODE OFF)
     set(PKG_COMPRESS OFF)
     set(PKG_VORONOI OFF)
+    set(PKG_MACHDYN OFF)
   endif(WIN32)
   if(APPLE)
     # brew install has wrong deployment version
