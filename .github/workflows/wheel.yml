@@ -39,7 +39,7 @@ jobs:
             python: 311
             platform_id: macosx_arm64
           # win64
-          - os: windows-latest
+          - os: windows-2019
             bitness: 64
             python: 311
             platform_id: win_amd64
@@ -56,7 +56,7 @@ jobs:
           python-version: '3.11'
       - name: Setup MPI
         uses: mpi4py/setup-mpi@v1
-        if: matrix.os == 'windows-latest'
+        if: matrix.os == 'windows-2019'
         with:
           mpi: msmpi
 
